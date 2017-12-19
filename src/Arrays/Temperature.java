@@ -6,6 +6,14 @@ import java.util.Scanner;
  *
  * @author AlumMati
  */
+
+/*
+Algoritmo que lea las temperaturas del mes n y calcule y visualice:
+- Temperatura media
+- La temperatura más baja
+- Cuantos días han tenido temperaturas superiores a la media
+*/
+
 public class Temperature {
     
     public Temperature(){
@@ -18,7 +26,7 @@ public class Temperature {
         
         System.out.println("Ingresa temperaturas: ");
         for (int i = 0; i < temp.length; i++) {
-            temp[i] = tec.nextInt();
+            temp[i] = tec.nextFloat();
         } min = temp[0];
         for (int i = 0; i < temp.length; i++) {
             sum += temp[i];
@@ -31,6 +39,10 @@ public class Temperature {
                 day++;
             }
         }
+        System.out.println("*****Temperaturas*****");
+        System.out.println("Media: " + average);
+        System.out.println("Miníma: "+ min);
+        System.out.println("Superior a la media: " + day);
     }
     
     public static void main(String[] args) {
