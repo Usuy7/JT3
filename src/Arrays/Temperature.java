@@ -30,9 +30,7 @@ public class Temperature {
         } min = temp[0];
         for (int i = 0; i < temp.length; i++) {
             sum += temp[i];
-            if (temp[i] < min){
-                min = temp[i];
-            }
+            if (temp[i] < min) min = temp[i];    
         } average = sum / (float) temp.length;
         for (int i = 0; i < temp.length; i++) {
             if (temp[i] > average){
