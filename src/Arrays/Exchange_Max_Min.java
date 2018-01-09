@@ -24,11 +24,14 @@ public class Exchange_Max_Min {
         }
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
-        } min = numbers[0]; max = numbers[0]; 
+        } min = numbers[0]; max = numbers[0];
+        System.out.println();
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < min) min = numbers[i]; posMin = i;
-            if (numbers[i] > max) max = numbers[i]; posMax = i;
+            if (i == 0){ min = numbers[i]; max = numbers[i];} 
+            else if (numbers[i] < min){ min = numbers[i]; posMin = i;} 
+            else if (numbers[i] > max){max = numbers[i]; posMax = i;}
         } numbers[posMax] = min; numbers[posMin] = max;
+        
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
         }
