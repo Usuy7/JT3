@@ -11,9 +11,9 @@ import java.util.Scanner;
 Algoritmo que lea un array de n elementos e intercambie el elemento mayor con el último.
 */
 
-public class Exchange {
+public class Exchange_Max_Last {
     
-    public Exchange(){
+    public Exchange_Max_Last(){
         Scanner tec = new Scanner (System.in);
         int numbers[] = new int [5];
         int max, pos = 0;
@@ -40,6 +40,6 @@ public class Exchange {
     }
     
     public static void main(String[] args) {
-        new Exchange();
+        new Exchange_Max_Last();
     }
 }

@@ -20,7 +20,7 @@ public class Student_Notes {
     public Student_Notes(){
         Scanner tec = new  Scanner (System.in);
         float notes [] = new float [10];
-        float average, percentage, sumA = 0, sumP = 0, under = 0;
+        float average, approved, sumA = 0, sumP = 0, under = 0;
         boolean excellent = false;
         
         System.out.println("Ingresa las notas: ");
@@ -32,16 +32,16 @@ public class Student_Notes {
             }
         }
         for (int i = 0; i < notes.length; i++) {
-            sumA += notes[i];
-            if (notes[i] >= 5) sumP += notes[i];
+            sumA += notes[i];  
             if (notes[i] < 2) under++;
-            if (notes[i] == 10) excellent = true;
+            else if (notes[i] >= 5) sumP++;
+            else if (notes[i] == 10) excellent = true;
         }
         average = sumA / (float) notes.length;
-        percentage = sumP * 10 / (float) notes.length;
+        approved = sumP * 100 / (float) notes.length;
         System.out.println("*****Notes*****");
         System.out.println("Average: " + average);
-        System.out.println("Approved %: " + percentage);
+        System.out.println("Approved %: " + approved);
         System.out.println("Under '2': " + under);
         System.out.println("Any 10?: " + excellent);
     }
