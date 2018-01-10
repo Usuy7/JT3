@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -17,14 +18,14 @@ public class Numbers_Not_Entered {
         Scanner tec = new Scanner(System.in);
         int num;
         boolean array[] = new boolean[10];
+        Arrays.fill(array, Boolean.FALSE);
 
         System.out.println("Introduce tus valores: ");
         for (int i = 0; i < 10; i++) {
-            
+
             num = tec.nextInt();
-            array[i] = false;
             array[num - 1] = true;
-            
+
             while (num < 1 || num > 10) {
                 System.out.println("FAIL, prueba otra vez");
                 num = tec.nextInt();
