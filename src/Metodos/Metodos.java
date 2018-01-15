@@ -254,4 +254,28 @@ public class Metodos {
     public static int randomNumbers() {
         return ((int) Math.floor(Math.random() * 1000));
     }
+
+    public String sequential_Search(int[] array, int dato) {
+        String posicion = "";
+        for (int i = 0; i < array.length; i++) {//recorremos todo el array
+            if (array[i] == dato) {//comparamos el elemento en el array con el buscado
+                posicion += i + " ";//Si es verdadero guardamos la posicion 
+            }   //Para guardar la 1 coincidencia se sustituye por: posicion = i; break;
+        }
+        return posicion;
+    }
+
+    public static int binary_Search(int array[], int dato) {
+        int centro, bot = 0, top = array.length - 1;
+        while (bot <= top) {
+            centro = top / 2;
+            if (array[centro] == dato) {
+                return centro;
+            } else if (dato < array[centro]) {
+                top = centro - 1;
+            } else {
+                bot = centro + 1;
+            }
+        }   return -1;
+    }
 }
