@@ -220,7 +220,7 @@ public class Metodos {
             // Si el char es una letra y no es el final de la frase, word = true.
             if (Character.isLetter(sentence.charAt(i)) && i != finDeLinea) {
                 palabra = true;
-                
+
                 // Si el char no es una letra y aún hay más letras, el contador continua.
             } else if (!Character.isLetter(sentence.charAt(i)) && palabra) {
                 cont++;
@@ -231,5 +231,27 @@ public class Metodos {
             }
         }
         return cont;
+    }
+
+    public static void print_N_Array(int array[]) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void print_S_Array(String array[]) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
+    public static void fillArray(int array[]) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = randomNumbers();
+        }
+    }
+
+    public static int randomNumbers() {
+        return ((int) Math.floor(Math.random() * 1000));
     }
 }

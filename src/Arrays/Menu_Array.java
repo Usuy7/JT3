@@ -25,7 +25,7 @@ public class Menu_Array {
         System.out.println("Introduce tus números: ");
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = tec.nextInt();
-        } // fillArray(numbers);       
+        } // fillArray(numbers);        // rellenar el array de numeros aleatorios 
         System.out.println("Array Original: ");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
@@ -37,7 +37,7 @@ public class Menu_Array {
         }
         System.out.println("Array Ordenado: ");
         Order(numbers);
-        // Arrays.sort(numbers);
+        // Arrays.sort(numbers);    // comando para ordenar el array
         
         System.out.println("¿Qué número buscas?: ");
         
@@ -47,24 +47,7 @@ public class Menu_Array {
         
     }
     
-    public static void print_N_Array (int array[]){
-        for (int i = 0; i < array.length; i++){
-            System.out.println(array[i]);
-        }
-    }
-    public static void print_S_Array (String array[]){
-        for (int i = 0; i < array.length; i++){
-            System.out.println(array[i]);
-        }
-    }
-    public static void fillArray (int array[]){
-        for(int i = 0; i < array.length; i++){
-            array[i] = randomNumbers();
-        }
-    }
-     private static int randomNumbers (){
-        return ((int)Math.floor(Math.random()*1000));
-    }
+    
     public static void main(String[] args) {
         new Menu_Array();
     }

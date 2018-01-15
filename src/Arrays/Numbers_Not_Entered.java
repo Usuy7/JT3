@@ -18,7 +18,7 @@ public class Numbers_Not_Entered {
         Scanner tec = new Scanner(System.in);
         int num;
         boolean array[] = new boolean[10];
-        Arrays.fill(array, Boolean.FALSE);
+        Arrays.fill(array, Boolean.FALSE); // convertir todos los valores del array a falsos
 
         System.out.println("Introduce tus valores: ");
         for (int i = 0; i < 10; i++) {
