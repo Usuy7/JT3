@@ -268,7 +268,7 @@ public class Metodos {
     public static int binary_Search(int array[], int dato) {
         int centro, bot = 0, top = array.length - 1;
         while (bot <= top) {
-            centro = top / 2;
+            centro = (top + bot) / 2;
             if (array[centro] == dato) {
                 return centro;
             } else if (dato < array[centro]) {
