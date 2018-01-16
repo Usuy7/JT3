@@ -255,7 +255,7 @@ public class Metodos {
         return ((int) Math.floor(Math.random() * 1000));
     }
 
-    public String sequential_Search(int[] array, int dato) {
+    public String search_Sequential(int[] array, int dato) {
         String posicion = "";
         for (int i = 0; i < array.length; i++) {//recorremos todo el array
             if (array[i] == dato) {//comparamos el elemento en el array con el buscado
@@ -265,7 +265,7 @@ public class Metodos {
         return posicion;
     }
 
-    public static int binary_Search(int array[], int dato) {
+    public static int search_Binary(int array[], int dato) {
         int centro, bot = 0, top = array.length - 1;
         while (bot <= top) {
             centro = (top + bot) / 2;
@@ -276,6 +276,108 @@ public class Metodos {
             } else {
                 bot = centro + 1;
             }
-        }   return -1;
+        }
+        return -1;
     }
+
+    public static void sort_Bubble_N(int array[]) {
+        int cont = 0;
+        //Usamos un bucle anidado, saldra cuando este ordenado el array
+        for (boolean ordenado = false; !ordenado;) {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    //Intercambiamos valores
+                    int aux = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = aux;
+                    //indicamos que hay un cambio
+                    cont++;
+                }
+            }
+            //Si no hay intercambios, es que esta ordenado.
+            if (cont == 0) {
+                ordenado = true;
+            }
+            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
+            cont = 0;
+        }
+    }
+
+    public static void sort_Bubble_S(String array[]) {
+        boolean ordenado = false;
+        int cont = 0;
+        //Usamos un bucle anidado, saldra cuando este ordenado el array
+        while (!ordenado) {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i].compareToIgnoreCase(array[i + 1]) > 0) {
+                    //Intercambiamos valores
+                    String aux = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = aux;
+                    //indicamos que hay un cambio
+                    cont++;
+                }
+            }
+            //Si no hay intercambios, es que esta ordenado.
+            if (cont == 0) {
+                ordenado = true;
+            }
+            //Inicializamos la variable de nuevo para que empiece a contar de nuevo
+            cont = 0;
+        }
+    }
+
+    public static void sort_Quick_N(int array[], int izq, int der) {
+        int i = izq, j = der;
+        int pivote = array[(i + j) / 2];
+        do {
+            while (array[i] < pivote) {
+                i++;
+            }
+            while (array[j] > pivote) {
+                j--;
+            }
+            if (i <= j) {
+                int aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;
+                i++;
+                j--;
+            }
+        } while (i <= j);
+        if (izq < j) {
+            sort_Quick_N(array, izq, j);
+        }
+        if (i < der) {
+            sort_Quick_N(array, i, der);
+        }
+    }
+
+    public static void sort_Quick_S(String array[], int izq, int der) {
+        int i = izq;
+        int j = der;
+        int pivote = (i + j) / 2;
+        do {
+            while (array[i].compareToIgnoreCase(array[pivote]) < 0) {
+                i++;
+            }
+            while (array[j].compareToIgnoreCase(array[pivote]) > 0) {
+                j--;
+            }
+            if (i <= j) {
+                String aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;
+                i++;
+                j--;
+            }
+        } while (i <= j);
+        if (izq < j) {
+            sort_Quick_S(array, izq, j);
+        }
+        if (i < der) {
+            sort_Quick_S(array, i, der);
+        }
+    }
+
 }
