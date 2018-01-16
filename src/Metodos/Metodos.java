@@ -255,11 +255,11 @@ public class Metodos {
         return ((int) Math.floor(Math.random() * 1000));
     }
 
-    public String search_Sequential(int[] array, int dato) {
+    public static String search_Sequential(int[] array, int dato) {
         String posicion = "";
-        for (int i = 0; i < array.length; i++) {//recorremos todo el array
-            if (array[i] == dato) {//comparamos el elemento en el array con el buscado
-                posicion += i + " ";//Si es verdadero guardamos la posicion 
+        for (int i = 0; i < array.length; i++) {    //recorremos todo el array
+            if (array[i] == dato) {     //comparamos el elemento en el array con el buscado
+                posicion += i + " ";    //Si es verdadero guardamos la posicion 
             }   //Para guardar la 1 coincidencia se sustituye por: posicion = i; break;
         }
         return posicion;
@@ -379,5 +379,4 @@ public class Metodos {
             sort_Quick_S(array, i, der);
         }
     }
-
 }

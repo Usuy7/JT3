@@ -1,7 +1,8 @@
 package Arrays;
 
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.util.Scanner;
+import Metodos.Metodos;
 
 /**
  *
@@ -14,14 +15,13 @@ Codifica un programa Java que lea un array de 10 elementos v[ ] .
 • Visualiza el array v ordenado.
 • Busca un valor en el array ordenado, utilizando la búsqueda binaria.
  */
-
 public class Menu_Array {
-    
-    public Menu_Array (){
-        Scanner tec = new Scanner (System.in);
-        int numbers[] = new int [10];
-        int numbers2[] = new int [5];
-        
+
+    public Menu_Array() {
+        Scanner tec = new Scanner(System.in);
+        int numbers[] = new int[10];
+        int numbers2[] = new int[5];
+
         System.out.println("Introduce tus números: ");
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = tec.nextInt();
@@ -36,18 +36,17 @@ public class Menu_Array {
             System.out.println(numbers2[i] + " ");
         }
         System.out.println("Array Ordenado: ");
-        Order(numbers);
-        // Arrays.sort(numbers);    // comando para ordenar el array
-        
+        // Arrays.sort(numbers);  comando para ordenar el array
+        Metodos.sort_Bubble_N(numbers); // ordenacion con el método de burbuja
+        Metodos.print_N_Array(numbers); // imprimo el array 
+
         System.out.println("¿Qué número buscas?: ");
-        
+        int dato = tec.nextInt();
+        String reply = Metodos.search_Sequential(numbers, dato);
+        if (reply.equals(" ")) System.out.println("Not found");
+         else System.out.println("Posición: " + reply);   
     }
-    
-    public void Order (int numbers[]){
-        
-    }
-    
-    
+
     public static void main(String[] args) {
         new Menu_Array();
     }
