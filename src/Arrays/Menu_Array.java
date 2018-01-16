@@ -23,15 +23,19 @@ public class Menu_Array {
         int numbers2[] = new int[5];
 
         System.out.println("Introduce tus números: ");
+        /*
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = tec.nextInt();
-        } // fillArray(numbers);        // rellenar el array de numeros aleatorios 
+        }
+         */
+        Metodos.fillArray(numbers);        // rellenar el array de numeros aleatorios 
+        
         System.out.println("Array Original: ");
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
         }
-        System.out.println("Array Secundario: ");
-        for (int i = 0; i < numbers2.length; i++) {
+        System.out.println("\n Array Secundario: ");
+        for (int i = 0; i < 5; i++) {
             numbers2[i] = numbers[i];
             System.out.println(numbers2[i] + " ");
         }
@@ -43,8 +47,11 @@ public class Menu_Array {
         System.out.println("¿Qué número buscas?: ");
         int dato = tec.nextInt();
         String reply = Metodos.search_Sequential(numbers, dato);
-        if (reply.equals(" ")) System.out.println("Not found");
-         else System.out.println("Posición: " + reply);   
+        if (reply.equals(" ")) {
+            System.out.println("Not found");
+        } else {
+            System.out.println("Posición: " + reply);
+        }
     }
 
     public static void main(String[] args) {

@@ -252,7 +252,7 @@ public class Metodos {
     }
 
     public static int randomNumbers() {
-        return ((int) Math.floor(Math.random() * 1000));
+        return ((int) Math.floor(Math.random() * 99));
     }
 
     public static String search_Sequential(int[] array, int dato) {
