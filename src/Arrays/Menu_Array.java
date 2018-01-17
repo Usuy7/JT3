@@ -23,31 +23,33 @@ public class Menu_Array {
         int numbers2[] = new int[5];
 
         System.out.println("Introduce tus números: ");
-        /*
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = tec.nextInt();
-        }
-         */
-        Metodos.fillArray(numbers);        // rellenar el array de numeros aleatorios 
-        
+        }   //Metodos.fillArray(numbers);  rellenar el array de numeros aleatorios 
+
         System.out.println("Array Original: ");
         for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i]);
-        }
-        System.out.println("\n Array Secundario: ");
-        for (int i = 0; i < 5; i++) {
+            System.out.print(numbers[i] + " ");
+        }   System.out.println("");
+
+        System.out.println("Array Secundario: ");
+        for (int i = 0; i < numbers2.length; i++) {
             numbers2[i] = numbers[i];
-            System.out.println(numbers2[i] + " ");
-        }
+            System.out.print(numbers2[i] + " ");
+        }   System.out.println("");
+
         System.out.println("Array Ordenado: ");
         // Arrays.sort(numbers);  comando para ordenar el array
-        Metodos.sort_Bubble_N(numbers); // ordenacion con el método de burbuja
+        Metodos.sort_Bubble_N(numbers); // ordenación con el método de burbuja
+        Metodos.sort_Quick_N(numbers, 0, numbers.length - 1); // ordenación con el método quickshoot
         Metodos.print_N_Array(numbers); // imprimo el array 
+        System.out.println("");
 
         System.out.println("¿Qué número buscas?: ");
         int dato = tec.nextInt();
         String reply = Metodos.search_Sequential(numbers, dato);
-        if (reply.equals(" ")) {
+
+        if (reply.equals("")) {
             System.out.println("Not found");
         } else {
             System.out.println("Posición: " + reply);

@@ -235,7 +235,7 @@ public class Metodos {
 
     public static void print_N_Array(int array[]) {
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+            System.out.print(array[i] + " ");
         }
     }
 
@@ -259,7 +259,7 @@ public class Metodos {
         String posicion = "";
         for (int i = 0; i < array.length; i++) {    //recorremos todo el array
             if (array[i] == dato) {     //comparamos el elemento en el array con el buscado
-                posicion += i + " ";    //Si es verdadero guardamos la posicion 
+                posicion += i + " ";    //si es verdad, se guarda y sigue buscando y guardando 
             }   //Para guardar la 1 coincidencia se sustituye por: posicion = i; break;
         }
         return posicion;
