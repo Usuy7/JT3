@@ -49,6 +49,8 @@ public class Practice_One {
             System.out.print(matriz[matriz.length - i - 1][i] + " "); 
         }   System.out.println("");
         
+        
+        
     }
 
     public static void main(String[] args) {
