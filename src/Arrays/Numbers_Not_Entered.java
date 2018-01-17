@@ -22,18 +22,15 @@ public class Numbers_Not_Entered {
 
         System.out.println("Introduce tus valores: ");
         for (int i = 0; i < 10; i++) {
-
             num = tec.nextInt();
             array[num - 1] = true;
-
             while (num < 1 || num > 10) {
                 System.out.println("FAIL, prueba otra vez");
                 num = tec.nextInt();
             }
         }
-
+        
         System.out.println("Los números no introducidos son: ");
-
         for (int i = 0; i < 10; i++) {
             if (array[i] == false) {
                 System.out.print(i + 1 + " ");
