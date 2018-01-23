@@ -203,14 +203,7 @@ public class Metodos {
 
         return cadena;
     }
-
-    public static int CountWord(String sentence, String word) {
-
-        int counter = 0;
-
-        return counter;
-    }
-
+    
     public static int CountWords(String sentence) {
         int cont = 0;
         boolean palabra = false;
