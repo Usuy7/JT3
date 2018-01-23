@@ -53,9 +53,10 @@ public class Practice_Two {
         } System.out.println("Elemento Mayor: " + max + "\n Fila: " + f + "\n Columna: " + c); System.out.println("");
         
         System.out.println("Intercambio Fila 8 X 3: ");
-        for (int i = 0; i < 10; i++) {
+        
+        for (int i = 0; i < matriz.length; i++) {
                 int aux = matriz[8][i];
-                matriz[8][c] = matriz[3][i];
+                matriz[8][i] = matriz[3][i];
                 matriz[3][i] = aux;
         }
         
