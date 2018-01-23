@@ -29,10 +29,8 @@ public class Practice_Two {
                 m[j] = (int) (Math.random() * 99) + 1;
                 System.out.printf("%02d", m[j]);
                 System.out.print(" ");
-            }
-            System.out.println("");
-        }
-System.out.println("");
+            } System.out.println("");
+        } System.out.println("");
         
         System.out.println("Matriz Secundaria: ");
         for (int i = 0; i < matriz.length; i++) {
@@ -67,10 +65,8 @@ System.out.println("");
             for (int j = 0; j < m.length; j++) {
                 System.out.printf("%02d", m[j]);
                 System.out.print(" ");
-            }
-            System.out.println("");
-        }
-System.out.println("");
+            } System.out.println("");
+        } System.out.println("");
     }
 
     public static void main(String[] args) {
