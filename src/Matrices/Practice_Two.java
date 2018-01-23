@@ -24,12 +24,15 @@ public class Practice_Two {
         int matriz[][] = new int[10][10];
 
         System.out.println("Matriz: ");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = (int) (Math.random() * 99) + 1;
-                System.out.printf("%02d", matriz[i][j]); System.out.print(" ");
-            } System.out.println("");
-        } System.out.println("");
+        for (int[] m : matriz) {
+            for (int j = 0; j < m.length; j++) {
+                m[j] = (int) (Math.random() * 99) + 1;
+                System.out.printf("%02d", m[j]);
+                System.out.print(" ");
+            }
+            System.out.println("");
+        }
+System.out.println("");
         
         System.out.println("Matriz Secundaria: ");
         for (int i = 0; i < matriz.length; i++) {
@@ -60,11 +63,14 @@ public class Practice_Two {
                 matriz[3][i] = aux;
         }
         
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {               
-                System.out.printf("%02d", matriz[i][j]); System.out.print(" ");
-            } System.out.println("");
-        } System.out.println("");
+        for (int[] m : matriz) {
+            for (int j = 0; j < m.length; j++) {
+                System.out.printf("%02d", m[j]);
+                System.out.print(" ");
+            }
+            System.out.println("");
+        }
+System.out.println("");
     }
 
     public static void main(String[] args) {
