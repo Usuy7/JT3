@@ -53,8 +53,19 @@ public class Regions {
 
         // Densidad Población
         double density[] = new double[15];
+        double suma = 0;
+        double media = 0;
         for (int i = 0; i < density.length; i++) {
-            density[i] = ((double) population[i]) / extension[i];
+            density[i] =  population[i] / extension[i];
+            suma += density[i];
+        }
+        
+        media = suma / density.length;
+        
+        for (int i = 0; i < density.length; i++) {
+            if (density[i] > media){
+                
+            }
         }
 
         // Unión Arrays
