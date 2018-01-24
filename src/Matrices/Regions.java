@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Metodos.Metodos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Arrays;
 
 /**
  *
@@ -40,31 +41,30 @@ public class Regions {
 
         // Extensiones Aleatorios
         double extension[] = new double[15];
-        double small = extension[0];
+        double min = 0;
 
         for (int i = 0; i < extension.length; i++) {
             extension[i] = (Math.random() * (2000 - 150) + 150);
-            System.out.println(extension[i]);
-            if (extension[i] < small) {
-                small = extension[i];
+            if (i == 0) {
+                min = extension[i];
+            } else if (extension[i] < min) {
+                min = extension[i];
             }
-        }   System.out.println(small);
-        System.out.println("");
+        }
 
         // Densidad Población
         double density[] = new double[15];
-        double suma = 0;
-        double media = 0;
+        double suma = 0, media = 0, cont = 0;
         for (int i = 0; i < density.length; i++) {
-            density[i] =  population[i] / extension[i];
+            density[i] = population[i] / extension[i];
             suma += density[i];
         }
-        
+
         media = suma / density.length;
-        
+
         for (int i = 0; i < density.length; i++) {
-            if (density[i] > media){
-                
+            if (density[i] > media) {
+                cont++;
             }
         }
 
@@ -80,17 +80,30 @@ public class Regions {
             }
         }
 
-        for (String[] reg : regions) {
-            for (String region : reg) {
-                System.out.print(region + "\t\t");
-            }
-            System.out.println("");
+        System.out.println("****COMARCAS***********POBLACIÓN********TERRENO*******DENSIDAD***");
+        for (int i = 0; i < regions.length; i++) {
+
+            System.out.print(regions[i][0] + "\t\t");
+
+            BigDecimal bd = new BigDecimal(regions[i][1]);
+            bd = bd.setScale(0, RoundingMode.HALF_UP);
+            System.out.print(bd.intValue() + "\t\t");
+
+            BigDecimal bd1 = new BigDecimal(regions[i][2]);
+            bd1 = bd1.setScale(2, RoundingMode.HALF_UP);
+            System.out.print(bd1.doubleValue() + "\t\t");
+
+            BigDecimal bd2 = new BigDecimal(regions[i][3]);
+            bd2 = bd2.setScale(2, RoundingMode.HALF_UP);
+            System.out.println(bd2.doubleValue());
         }
-        System.out.println("");
 
+        System.out.println("");
         System.out.print("Menor extensión es: ");
-
-        System.out.println("");
+        System.out.printf("%.2f %n", min);
+        Arrays.toString(population);
+        System.out.print("Nº de Comarcas con densidad superior a la media: ");
+        System.out.printf("%.0f %n", cont);
         if (lower == true) {
             System.out.println("Hay alguna con censo inferior a 10.000 habitantes");
         } else {
