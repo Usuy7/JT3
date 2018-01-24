@@ -24,47 +24,66 @@ public class Regions {
 
         Scanner tec = new Scanner(System.in);
 
-        String regions[][] = new String[15][3];
-        double extension[] = new double[15];
-        int population[] = new int[15];
-        double density, average;
-        int smallest;
-        boolean undermean;
-        
         // Nombres de las Comarcas
-        String names[] = {"Alto Maestrazgo", "Alto Palancia", "Alto Vinalopó ", "Bajo Maestrazgo", "Bajo Vinalopó", "Campo de Alicante", "Campo de Morvedre",
-            "Campo de Turia", "Huerta Norte", "Marina Alta", "Plana de Utiel", "Safor", "Valle de Albaida", "Valle de Ayora", "Vinalopó Medio"};     
+        String names[] = {"Alto Maestrazgo", "Alto Palancia", "Alto Vinalopó ", "Bajo Maestrazgo", "Bajo Vinalopó", "Campo Alicante", "Campo Morvedre",
+            "Campo Turia", "Huerta Norte", "Marina Alta", "Plana Utiel", "La Safor", "Valle Albaida", "Valle Ayora", "Vinalopó Medio"};
 
-        for (String name : names) {
-            System.out.println(name);
-        } System.out.println("");
-        
         // Habitantes Aleatorios
-        for (int habitant : population) {
-            population[habitant] = (int)(Math.random() * (50000 - 5000) + 5000);
-            System.out.println(population[habitant]);
-        } System.out.println("");
-        
-        // Extensiones Aleatorios
-        for (int i = 0; i < extension.length; i++) {
-            extension[i] = (Math.random() * (2000 - 150) + 150);
-            BigDecimal bd = new BigDecimal(extension[i]);
-            bd = bd.setScale(3, RoundingMode.HALF_UP);
-            System.out.println(bd.doubleValue());
-        }
-        
-        for (int i = 0; i < regions.length; i++){
-            for (int j = 0; j < regions[i].length; j++) {
-                regions[i][0] += names;
-                regions[i][1] += population;
-                regions[i][2] += extension;
+        double population[] = new double[15];
+        boolean lower = false;
+        for (int i = 0; i < population.length; i++) {
+            population[i] = (int) (Math.random() * (50000 - 5000) + 5000);
+            if (population[i] < 10000) {
+                lower = true;
             }
         }
+
+        // Extensiones Aleatorios
+        double extension[] = new double[15];
+        double small = extension[0];
+
+        for (int i = 0; i < extension.length; i++) {
+            extension[i] = (Math.random() * (2000 - 150) + 150);
+            System.out.println(extension[i]);
+            if (extension[i] < small) {
+                small = extension[i];
+            }
+        }   System.out.println(small);
+        System.out.println("");
+
+        // Densidad Población
+        double density[] = new double[15];
+        for (int i = 0; i < density.length; i++) {
+            density[i] = ((double) population[i]) / extension[i];
+        }
+
+        // Unión Arrays
+        String regions[][] = new String[15][4];
 
         for (int i = 0; i < regions.length; i++) {
             for (int j = 0; j < regions[i].length; j++) {
-                System.out.println(regions[i][j]);
+                regions[i][0] = names[i];
+                regions[i][1] = String.valueOf(population[i]);
+                regions[i][2] = String.valueOf(extension[i]);
+                regions[i][3] = String.valueOf(density[i]);
             }
+        }
+
+        for (String[] reg : regions) {
+            for (String region : reg) {
+                System.out.print(region + "\t\t");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+
+        System.out.print("Menor extensión es: ");
+
+        System.out.println("");
+        if (lower == true) {
+            System.out.println("Hay alguna con censo inferior a 10.000 habitantes");
+        } else {
+            System.out.println("Todas superan los 10.000 habitantes");
         }
     }
 
