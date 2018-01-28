@@ -26,16 +26,18 @@ public class Students {
         BufferedReader tec = new BufferedReader(new InputStreamReader(System.in));
         String array[] = new String[3];
         String name = "";
+        int cont = 0;
 
-        do {
+        if (cont < 3) {
             for (int i = 0; i < array.length; i++) {
                 System.out.print("Introduce un nombre: ");
                 name = tec.readLine();
                 array[i] = name;
+                cont++;
+                System.out.println("");
+                Metodos.print_S_Array(array);
             }
-            System.out.println("");
-            Metodos.print_S_Array(array);
-        } while (!name.equals("f"));
+        }
 
     }
 
