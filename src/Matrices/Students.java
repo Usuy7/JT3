@@ -38,10 +38,9 @@ public class Students {
                 test_name = test_name.toLowerCase();
 
                 for (int j = 0; j < test_name.length(); j++) {
-                    char caracter = test_name.charAt(i);
                     
                     if (bad == test_name.charAt(i)) {
-                        bomb = true;
+                        bomb = true; break;
                     } else {
                         array[i] = name;
                     }
