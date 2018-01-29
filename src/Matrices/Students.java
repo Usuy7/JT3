@@ -25,19 +25,31 @@ public class Students {
 
         BufferedReader tec = new BufferedReader(new InputStreamReader(System.in));
         String array[] = new String[3];
-        String name = "";
-        int cont = 0;
+        String name = "", test_name = "";
+        char bad = 'f';
+        boolean bomb = false;
 
-        if (cont < 3) {
-            for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
+
+            if (bomb == false) {
                 System.out.print("Introduce un nombre: ");
                 name = tec.readLine();
-                array[i] = name;
-                cont++;
-                System.out.println("");
-                Metodos.print_S_Array(array);
+                test_name = name;
+                test_name = test_name.toLowerCase();
+
+                for (int j = 0; j < test_name.length(); j++) {
+                    char caracter = test_name.charAt(i);
+                    
+                    if (bad == test_name.charAt(i)) {
+                        bomb = true;
+                    } else {
+                        array[i] = name;
+                    }
+                }
             }
         }
+
+        Metodos.print_S_Array(array);
 
     }
 
