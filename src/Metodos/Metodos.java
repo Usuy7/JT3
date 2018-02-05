@@ -196,7 +196,7 @@ public class Metodos {
                 }
             }
             if (!val) {
-                System.out.print("Error, ingresa un número entero: ");
+                System.out.print("Error, ingresa un número: ");
                 cadena = tec.nextLine();
             }
         } while (!val);
